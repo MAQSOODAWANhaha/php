@@ -25,7 +25,7 @@ RUN dnf install -y https://rpms.remirepo.net/enterprise/remi-release-9.rpm \
         php-swoole
 
 COPY supervisord.conf /etc/supervisord.conf
-
+COPY php-fpm.conf /etc/php-fpm.conf
 RUN php -i && php -m && php -v
 
 RUN mkdir -p /run/php-fpm
