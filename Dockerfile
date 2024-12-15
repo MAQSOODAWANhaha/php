@@ -28,4 +28,6 @@ COPY supervisord.conf /etc/supervisord.conf
 
 RUN php -i && php -m && php -v
 
+RUN mkdir -p /run/php-fpm
+
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
