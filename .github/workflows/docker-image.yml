@@ -39,7 +39,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/php:9.3
-            registry.cn-hangzhou.aliyuncs.com/luciferzl/php:9.3
+            ${{ secrets.DOCKERHUB_USERNAME }}/php:8.3.14
+            registry.cn-hangzhou.aliyuncs.com/luciferzl/php:8.3.14
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/php:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/php:buildcache,mode=max

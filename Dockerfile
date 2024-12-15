@@ -19,8 +19,13 @@ RUN dnf install -y https://rpms.remirepo.net/enterprise/remi-release-9.rpm \
         php-bcmath \
         php-json \
         php-redis \
-        php-imagick
+        php-imagick \
+        php-pgsql \
+        php-grpc \
+        php-swoole
 
 COPY supervisord.conf /etc/supervisord.conf
+
+RUN php -i && php -m && php -v
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
